@@ -1,0 +1,546 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Membuat scroll lebih smooth */
+html {
+  scroll-behavior: smooth;
+}
+/* Pendeklarasian overflow-x agar tidak melebar ke samping */
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  background-color: #d4deee;
+}
+/* ------NAVBAR STYLE------ */
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  background-color: #b0c4de;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  margin-bottom: 60px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+}
+.logo h1 {
+  margin-left: 5px;
+  font-weight: 500;
+}
+.logo img {
+  width: 50px;
+}
+nav {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+nav ul {
+  width: fit-content;
+  display: flex;
+  margin-right: 20px;
+  list-style-type: none;
+  align-items: center;
+  justify-content: flex-end;
+}
+nav ul li {
+  margin-left: 25px;
+}
+nav ul li a:hover {
+  color: #151515;
+}
+/* ------END OF NAVBAR STYLE------ */
+a {
+  text-decoration: none;
+  color: #000;
+}
+/* -----MAIN PAGE STYLE */
+#main-page {
+  display: flex;
+  flex-direction: column;
+}
+.main {
+  display: flex;
+  height: 100vh;
+  margin-top: 60px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.main .col-2 img {
+  width: 500px;
+}
+.main .col-1 {
+  align-items: center;
+}
+#main .row {
+  justify-content: space-around;
+  align-items: center;
+}
+.row {
+  display: flex;
+  width: 100vw;
+}
+
+.container {
+  max-width: 100%;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+/* Universal Button, akan digunakan di home page dan promotion page */
+.btn {
+  display: inline-block;
+  background: #4772aa;
+  color: #fff;
+  padding: 8px 30px;
+  margin: 30px 0;
+  border-radius: 30px;
+  transition: background 0.2s, transform 0.2s;
+  width: 180px;
+  text-align: center;
+}
+.btn:hover {
+  background: #85baff;
+  transform: scale(0.99);
+}
+
+/* -----END MAIN SECTION STYLE----- */
+/* PENDEKLARASIAN TITLE UNTUK MEMUDAHKAN STYLING TITLE */
+.title {
+  text-align: center;
+  margin-bottom: 0 auto 80px;
+  position: relative;
+  line-height: 60px;
+  color: #555;
+  margin-bottom: 25px;
+}
+.title::after {
+  content: "";
+  background: #ff523b;
+  width: 80px;
+  height: 5px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* -----IMAGE CONTAINER----- (AKAN DIGUNAKAN PADA BAGIAN "Our Uniform" dan "Find Us" */
+.image-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 90%;
+}
+/* -----OUR UNIFORM----- */
+.categories {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.categories .row .col-3 img {
+  transition: transform 0.2s;
+}
+.categories .categories-image .row .col-3 img:hover {
+  transform: scale(0.98);
+}
+.col-3 {
+  flex-basis: 30%;
+  min-width: 250px;
+  margin-bottom: 30px;
+}
+
+.col-3 img {
+  width: 100%;
+}
+.image-content {
+  transition: transform 0.2s;
+}
+.image-content:hover {
+  transform: scale(0.98);
+  transition: transform 0.2s;
+}
+h4 {
+  color: #555;
+  font-weight: normal;
+}
+/* -----PRODUCT STYLE----- */
+/* -----FIND US STYLE-----*/
+.socmed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 60px;
+  height: 80vh;
+}
+
+.image-container .col-5 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 15vw;
+}
+.col-5 .blur-bg {
+  width: 100px;
+  height: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: filter 0.3s;
+}
+.image-container .col-5:nth-child(1) .blur-bg {
+  background-image: url(images/LogoInstagram.1.png);
+}
+.image-container .col-5:nth-child(2) .blur-bg {
+  background-image: url(images/LogoGoogle.png);
+}
+
+.image-container .col-5:nth-child(3) .blur-bg {
+  background-image: url(images/LogoCall1.png);
+}
+
+.image-container .col-5:nth-child(4) .blur-bg {
+  background-image: url(images/Gmaps.png);
+}
+.col-5 a {
+  position: absolute;
+  font-size: 1.2em;
+  color: #444;
+  font-weight: 500;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: 0.5;
+  transition: transform 0.3s;
+}
+.col-5:hover .blur-bg {
+  filter: blur(3px);
+  transition: filter 0.3s;
+}
+.col-5:hover a {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 0.3s, opacity 0.3s;
+}
+/* -----PRODUCT PAGE STYLE----- */
+#products-container {
+  display: flex;
+  flex-direction: column;
+}
+#products-container .row {
+  display: flex;
+  width: 100vw;
+  justify-content: space-around;
+}
+.best-seller {
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+}
+.title-line {
+  width: 250px;
+  height: 2px;
+  background-color: #000;
+  margin-bottom: 25px;
+}
+.col-4 p {
+  font-size: 14px;
+}
+.rating .fa {
+  color: #ff253b;
+}
+.col-4 {
+  width: 20vw;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.2s;
+}
+.col-4:hover {
+  transform: translateY(-5px);
+}
+.col-4 img {
+  width: 250px;
+}
+/* KARENA ADA BEBERAPA GAMBAR YANG TINGGI, MAKA TINGGINYA HARUS DISESUAIKAN */
+.tall {
+  background-color: #b0c4de;
+  height: 250px;
+}
+.tall img {
+  height: 250px;
+  width: auto;
+}
+/* -----PROMOTION PAGE----- */
+#promotion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#promotion .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#promotion .col-2 img {
+  width: 350px;
+}
+#promotion .row .col-2 {
+  margin: 0 50px;
+}
+.col-2:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/*------TESTIMONY PAGE------*/
+#testimonial-container {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+}
+/* MENGGUNAKAN DISPLAY GRID UNTUK MERAPIHKAN TAMPILAN */
+.testimonial .row {
+  display: grid;
+  grid-template-areas:
+    "a b"
+    "c d";
+  justify-content: center;
+}
+.testimonial .col-3 {
+  text-align: center;
+  width: 300px;
+  padding: 40px 20px;
+  margin: 10px 25px;
+  cursor: pointer;
+  transition: transform 0.5s;
+  outline: solid 2px #555;
+}
+.testimonial .col-3 img {
+  width: 50px;
+  margin-top: 20px;
+  border-radius: 50%;
+}
+
+.testimonial .col-3:hover {
+  transform: translateY(-10px);
+}
+.fa.fa-quote-left {
+  font-size: 34px;
+  color: #ff253b;
+}
+.col-3 p {
+  font-size: 12px;
+  margin: 12px 0;
+  color: #777;
+}
+.testimonial .col-3 .h3 {
+  font-weight: 600;
+  color: #555;
+  font-size: 16px;
+}
+/* -----FOOTER STYLE----- */
+#footer {
+  display: flex;
+  background: #b0c4de;
+  color: #000;
+  font-size: 14px;
+}
+#footer .row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+#second-row {
+  display: flex;
+  justify-content: space-around;
+}
+#footer h1 {
+  text-align: center;
+}
+#footer h3 {
+  margin-bottom: 20px;
+}
+.footer-col-1,
+.footer-col-2,
+.footer-col-3 {
+  margin-bottom: 20px;
+}
+.footer-col-1 {
+  text-align: center;
+}
+.footer-col-3 ul li a {
+  text-decoration: underline;
+}
+.form-group {
+  margin: 15px 0;
+}
+.form-group input,
+.form-group textarea {
+  padding: 5px;
+  width: 200px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+}
+/* RESPONSIVE STYLE */
+@media only screen and (max-width: 768px) {
+  body {
+    width: 100%;
+    border: 1px solid transparent;
+    padding-bottom: 50px;
+    height: auto;
+  }
+  .header {
+    width: 100vw;
+    flex-direction: column;
+    position: fixed;
+  }
+  .header .logo h1 {
+    font-size: 1.5em;
+  }
+  .header .logo img {
+    width: 40px;
+  }
+  .header nav {
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+  }
+  .header nav ul {
+    margin: unset;
+  }
+  .header nav ul li {
+    margin: 0 5px;
+  }
+  .header nav ul li a {
+    font-size: 0.8em;
+  }
+  /* End Header */
+  /* Main */
+  #main {
+    width: 100vw;
+    height: auto;
+    margin-top: 100px;
+  }
+  #main .row {
+    width: 100%;
+    flex-direction: column-reverse;
+  }
+  #main .row img {
+    width: 100%;
+  }
+  .col-1 {
+    width: 100%;
+    padding: 5px;
+  }
+  .col-1 h1 {
+    font-size: 1.8em;
+  }
+  /* End Main */
+  /* Categories section */
+  .categories {
+    margin-bottom: 0;
+  }
+  .categories .image-container {
+    flex-direction: column;
+  }
+  .col-3 {
+    flex-basis: unset;
+  }
+  .image-content {
+    display: flex;
+    height: auto;
+    align-self: center;
+    justify-content: center;
+    width: 75%;
+  }
+  .image-content img {
+    width: 75%;
+  }
+  /* Find us section */
+  #socmed {
+    margin-top: 0;
+    padding: 0;
+    width: 100%;
+    height: 30vh;
+    transition: unset;
+  }
+  #socmed .image-container {
+    width: 100vw;
+  }
+  .image-container .col-5 a {
+    opacity: 1;
+    transform: translateY(60px);
+  }
+  .col-5:hover {
+    filter: none;
+  }
+  /* Product Page */
+  .col-4 img {
+    width: 150px;
+  }
+  .col-4 .tall {
+    height: 150px;
+  }
+  .col-4 .tall img {
+    width: auto;
+    height: 150px;
+  }
+  /* Promotion Page */
+  #promotion {
+    width: 100vw;
+    height: auto;
+    margin-top: 100px;
+  }
+  #promotion .row {
+    width: 100%;
+    flex-direction: column;
+  }
+  #promotion .row img {
+    width: 500px;
+  }
+  #promotion .row .col-2:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .col-1 {
+    width: 100%;
+    padding: 5px;
+  }
+  .col-1 h1 {
+    font-size: 1.8em;
+  }
+  .col-3 h3 {
+    font-weight: 400;
+  }
+  .col-5 {
+    margin-bottom: 100px;
+    text-align: center;
+  }
+  .col-5:hover .blur-bg {
+    filter: none;
+  }
+  .col-5 .blur-bg {
+    width: 75px;
+    height: 75px;
+  }
+}
